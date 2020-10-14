@@ -1,20 +1,35 @@
 import React from 'react'
-function Contact () {
-    return(
-    <div className="Contact">
-        <img className="avatar" src="https://laughingsquid.com/wp-content/uploads/tumblr_m3kqhs4OHy1qf8rjmo1_1280.jpg"
-        alt="user-pic" />
-        <div>
-            <p className="name">Iron Man</p>
-            <div className="status">
-            <div className="status-online"></div>
-            <div className="status-text">online</div>
+import PropTypes from 'prop-types'
+
+class Contact extends React.Component {
+    render() {
+        const{avatar, name, isOnline} = this.props;
+
+        return (
+            <div className="Contact">
+                {<img className="avatar" src={avatar} alt="John"></img>}
+
+                <div>
+                    <p className="name"><b>{name}</b></p>
+                    <div className="status">
+
+                   
+                        <div className={isOnline ? 'status-online' : 'status-offline'}></div>
+                        <div className="status-text">{isOnline ? 'online' : 'offline'}</div>
+                        
+                    
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </div>
-    )
+        )
+    }
 }
-export default Contact
+Contact.propTypes = {
+    characterFirstName: PropTypes.string.isRequired,
+    characterLastName: PropTypes.string.isRequired,
+  };
+export default Contact;
 
 
 

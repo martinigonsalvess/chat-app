@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-const name = "John the Boy";
+const name = "Johny Doe";
 const avatar = "https://laughingsquid.com/wp-content/uploads/tumblr_m3kqhs4OHy1qf8rjmo1_1280.jpg";
 const isOnline = true;
 
@@ -14,6 +14,7 @@ class Contact extends React.Component {
                 {<img className="avatar" src={avatar} alt="John"></img>}
 
                 <div className="name"><b>{name}</b>
+                
                     <div className="status">
                         <div className="status-text">
 
